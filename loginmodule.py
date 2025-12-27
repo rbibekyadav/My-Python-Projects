@@ -1,29 +1,32 @@
-print("Welcome to CUBICROOM")
+print("Welcome to Cubic Room")
 usernames=[]
 passwords=[]
-ans=input("Do you already have an account? y/n:")
-if ans=="n":
-    uid=input("Create a username:")
-    password=input("create a password:")
-    usernames.append(uid)
-    print(f"Congratulations {uid.title()}, you have successfully created an account!!!")
-elif ans=="y":
-    uid=input("Enter your username:")
-    for userid in usernames:
-        if uid == userid:
-            passcode=input("Enter your password:")
-            for pw in passwords:
-                if passcode==pw:
-                    print("You have successfully logged in!")
-                else:
-                    print("You entered the wrong password")
+while True:
+    ans=input("Do you already have an account?: y/n")
+    if ans == "y":
+        username=input("Enter your username:")
+        if username in usernames:
+            password=input("Enter your password:")
+            if password in passwords:
+                print("You have successfully Logged in!!!")
+            else:
+                print("You have entered a wrong password. Please try again.")    
         else:
-            print("You have not crreated an account yet. Please create one.")
-else:
-    print("Please type 'y' for yes or 'n' for no.") 
+            print("Username not found. Please create an account.")
+    elif ans == "n":
+        username=input("Create a username:")
+        usernames.append(username)
+        password=input("Create a password:")
+        passwords.append(password)
+        print("please login with the username and password that you have created just now.")
+    else:
+        print("Please enter 'y' for yes and 'n' for no.")   
 
 
 
+
+           
+            
 
 
 
